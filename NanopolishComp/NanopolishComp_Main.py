@@ -5,6 +5,7 @@
 # Standard library imports
 import argparse
 import sys
+import signal
 
 # Local imports
 from NanopolishComp import __version__ as package_version
@@ -12,6 +13,7 @@ from NanopolishComp import __name__ as package_name
 from NanopolishComp.Eventalign_collapse import Eventalign_collapse
 from NanopolishComp.Helper_fun import stderr_print
 
+signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 #~~~~~~~~~~~~~~TOP LEVEL ENTRY POINT~~~~~~~~~~~~~~#
 def main ():
     # Simple triage function
